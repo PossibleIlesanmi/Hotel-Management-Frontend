@@ -53,14 +53,16 @@ body {
 }
 
 .footer {
-  text-align: center;
+  /* text-align: center; */
+  
   padding: 10px 20px;
   background-color: #1E3A8A;
   color: #FFFFFF;
   width: 100%;
   position: fixed;
+  padding-left: 350px;
+
   bottom: 0;
-  margin-left: 0; /* Ensure full width */
   z-index: 1000; /* Ensure it stays above content */
 }
 
