@@ -1,12 +1,102 @@
-# React + Vite
+# Hotel Management System - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend application for the Hotel Management System, built using React, Vite, and Material-UI. It provides a user interface for managing hotel bookings, guest information, and reports, with a responsive design and dark/light mode support.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Project Locally](#running-the-project-locally)
+- [Deployment](#deployment)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
+- **Node.js**: Version 14.x or higher (recommended: LTS version).
+- **npm**: Comes with Node.js, or install separately if needed.
+- **Git**: For version control and cloning the repository.
+- **Vercel CLI** (optional): For deployment (install via `npm install -g vercel`).
 
-## Expanding the ESLint configuration
+## Installation
+1. **Clone the Repository**:
+   - Open a terminal and run:
+     ```
+     git clone https://github.com/PossibleIlesanmi/Hotel-Management-Frontend.git
+     cd Hotel-Management-Frontend
+     ```
+   - Note: If you’re working directly in an existing folder (e.g., `client`), ensure it’s initialized as a Git repository (`git init`) and linked to the remote (`git remote add origin https://github.com/PossibleIlesanmi/Hotel-Management-Frontend.git`).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Install Dependencies**:
+   - Run the following command to install the required packages:
+     ```
+     npm install
+     ```
+   - Ensure the following dependencies are included in `package.json`:
+     - `react`
+     - `react-dom`
+     - `react-router-dom`
+     - `@mui/material`
+     - `@emotion/react`
+     - `@emotion/styled`
+     - `vite` (for development server)
+
+3. **Configure Git Identity** (if not already set):
+   - Set your Git username and email (replace with your details):
+     ```
+     git config --global user.name "Ilesanmi Gbenga"
+     git config --global user.email "your-github-email@example.com"
+     ```
+   - Verify with:
+     ```
+     git config --global --list
+     ```
+
+## Running the Project Locally
+1. **Start the Development Server**:
+   - Run the following command to start the app:
+     ```
+     npm run dev
+     ```
+   - This will launch the development server, typically at `http://localhost:5173`. Open this URL in your browser.
+
+2. **Explore the App**:
+   - Navigate through the sidebar to pages like Dashboard, Bookings, Guest Management, Reports, and Settings.
+   - Toggle dark mode via the Settings page to test the theme.
+
+## Deployment
+To deploy the project on Vercel:
+
+1. **Install Vercel CLI**:
+   - Install globally if not already installed:
+     ```
+     npm install -g vercel
+     ```
+
+2. **Log In to Vercel**:
+   - Authenticate with your Vercel account:
+     ```
+     vercel login
+     ```
+   - Follow the prompts to log in via browser or token.
+
+3. **Deploy the Project**:
+   - From the project root directory, run:
+     ```
+     vercel
+     ```
+   - Configure the deployment:
+     - **Project Name**: e.g., `hotel-management-frontend`.
+     - **Framework Preset**: Select "Vite" (or "Create React App" if Vite isn’t listed).
+     - **Build Command**: `npm run build` (ensure this script exists in `package.json`).
+     - **Output Directory**: `dist` (default for Vite).
+     - **Install Dependencies**: Choose "Yes".
+   - Confirm with `y` and note the deployed URL (e.g., `https://hotel-management-frontend.vercel.app`).
+
+4. **Automate with GitHub (Optional)**:
+   - Connect the repository to Vercel via [vercel.com](https://vercel.com):
+     - Import `https://github.com/PossibleIlesanmi/Hotel-Management-Frontend.git`.
+     - Configure settings and deploy.
+   - Future pushes to `master` will trigger automatic redeploys.
+
+## Project Structure
