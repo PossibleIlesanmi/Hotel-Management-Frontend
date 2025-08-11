@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+  padding: 20px;
+  min-height: 100vh;
+  transition: background-color 0.3s;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  padding: 20px;
+  transition: background-color 0.3s;
+  z-index: 1100; /* Higher than header's z-index to stay on top */
+}
+
+.sidebar a {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.sidebar a:hover {
+  color: #F59E0B;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 80px 20px 60px 20px; /* Adjusted padding to account for header and footer height */
+  transition: background-color 0.3s;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 10px 20px;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  left: 0;
+  z-index: 1000; /* Lower than sidebar's z-index */
+  text-align: center; /* Centered text as per previous update */
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-left: 0; /* Ensure full width */
+  z-index: 1000; /* Ensure it stays above content */
+}
+
+.dark-mode {
+  background-color: #1A202C;
+}
+
+.dark-mode .sidebar {
+  background-color: #2D3748;
+}
+
+.dark-mode .sidebar a {
+  color: #E2E8F0;
+}
+
+.dark-mode .content,
+.dark-mode .app-container {
+  background-color: #1A202C;
+  color: #FFFFFF; /* General text color */
+}
+
+.dark-mode .header {
+  background-color: #2D3748;
+  color: #FFFFFF; /* Improved text contrast */
+}
+
+.dark-mode .footer {
+  background-color: #2D3748;
+  color: #FFFFFF; /* Improved text contrast */
+}
+
+/* Style for input fields and labels in dark mode */
+.dark-mode input,
+.dark-mode .MuiInputBase-input {
+  background-color: #4A5568; /* Medium gray background for contrast */
+  color: #FFFFFF; /* White text for maximum readability */
+  border: 1px solid #718096; /* Light border for definition */
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.dark-mode input[type="date"] {
+  color: #FFFFFF; /* Ensure date picker input text is white */
+}
+
+.dark-mode input[type="date"]::-webkit-datetime-edit,
+.dark-mode input[type="date"]::-webkit-inner-spin-button,
+.dark-mode input[type="date"]::-webkit-clear-button {
+  color: #FFFFFF; /* Target date picker sub-elements */
+}
+
+.dark-mode .MuiInputLabel-root {
+  color: #FFFFFF; /* Ensure TextField labels are white */
+}
+
+.dark-mode .MuiInputLabel-root.Mui-focused {
+  color: #F59E0B; /* Highlight label when focused with secondary color */
+}
+
+.dark-mode input:focus,
+.dark-mode .MuiInputBase-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F59E0B; /* Highlight on focus with secondary color */
+}
+
+/* Style for Table and Button in dark mode */
+.dark-mode .MuiTableCell-root {
+  color: #FFFFFF; /* Ensure table headers and cells are white */
+  background-color: #2D3748; /* Darker background for contrast */
+}
+
+.dark-mode .MuiTableHead-root .MuiTableCell-root {
+  color: #F59E0B; /* Highlight table headers with secondary color */
+  font-weight: 600; /* Bold headers for emphasis */
+}
+
+.dark-mode .MuiButton-root {
+  color: #FFFFFF; /* Ensure button text is white */
+  background-color: #4A5568; /* Match input background */
+  border-color: #718096; /* Consistent border */
+}
+
+.dark-mode .MuiButton-root:hover {
+  background-color: #718096; /* Darker shade on hover */
+}
+
+.dark-mode .MuiButton-outlined {
+  border-color: #F59E0B; /* Highlight outlined buttons */
+}
+
+.dark-mode .MuiButton-outlined:hover {
+  background-color: #F59E0B;
+  color: #1A202C; /* Contrast text on hover */
+}
