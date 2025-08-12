@@ -1,4 +1,3 @@
-// client/src/pages/Access.jsx
 import React, { useState } from 'react';
 import { Typography, Box, TextField, Button, styled } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -38,9 +37,9 @@ const Access = () => {
       );
       localStorage.setItem('token', response.data.token);
       setError('');
-      navigate('/');
+      navigate('/bookings'); // Redirect to bookings page
     } catch (err) {
-      setError(err.response?.data?.message || 'Invalid code. Please try again.');
+      setError(err.response?.data?.message || 'Invalid code or server error. Please try again.');
     }
   };
 
