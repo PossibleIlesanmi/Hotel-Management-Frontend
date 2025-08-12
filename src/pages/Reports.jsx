@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, Box, Button, Grid } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Reports = () => {
   const token = localStorage.getItem('token');
-  const API_BASE = 'http://localhost:5000/api/reports'; // Updated to backend port 5000
+  const API_BASE = `${import.meta.env.VITE_API_URL}/api/reports`; // Updated to backend port 5000
 
   const downloadFile = async (endpoint, filename) => {
     try {
