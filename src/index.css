@@ -20,7 +20,7 @@ body {
   color: #FFFFFF;
   padding: 20px;
   transition: background-color 0.3s;
-  z-index: 1100; /* Higher than header's z-index to stay on top */
+  z-index: 1100;
 }
 
 .sidebar a {
@@ -36,7 +36,7 @@ body {
 
 .content {
   margin-left: 250px;
-  padding: 80px 20px 60px 20px; /* Adjusted padding to account for header and footer height */
+  padding: 80px 20px 60px 20px;
   transition: background-color 0.3s;
 }
 
@@ -48,22 +48,20 @@ body {
   background-color: #1E3A8A;
   color: #FFFFFF;
   left: 0;
-  z-index: 1000; /* Lower than sidebar's z-index */
-  text-align: center; /* Centered text as per previous update */
+  z-index: 1000;
+  text-align: center;
 }
 
 .footer {
-  /* text-align: center; */
-  
-  padding: 10px 20px;
+  padding-left: 310px;
+  /* padding: 10px 20px; */
   background-color: #1E3A8A;
   color: #FFFFFF;
-  width: 100%;
+  width: calc(100% - 250px);
   position: fixed;
-  padding-left: 350px;
-
   bottom: 0;
-  z-index: 1000; /* Ensure it stays above content */
+  z-index: 1000;
+  /* margin-left: 50px; */
 }
 
 .dark-mode {
@@ -81,79 +79,259 @@ body {
 .dark-mode .content,
 .dark-mode .app-container {
   background-color: #1A202C;
-  color: #FFFFFF; /* General text color */
+  color: #FFFFFF;
 }
 
 .dark-mode .header {
   background-color: #2D3748;
-  color: #FFFFFF; /* Improved text contrast */
+  color: #FFFFFF;
 }
 
 .dark-mode .footer {
   background-color: #2D3748;
-  color: #FFFFFF; /* Improved text contrast */
+  color: #FFFFFF;
 }
 
-/* Style for input fields and labels in dark mode */
-.dark-mode input,
-.dark-mode .MuiInputBase-input {
-  background-color: #4A5568; /* Medium gray background for contrast */
-  color: #FFFFFF; /* White text for maximum readability */
-  border: 1px solid #718096; /* Light border for definition */
+/* Style for input fields and labels */
+input,
+.MuiInputBase-input {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F9FAFB;
   border-radius: 4px;
   padding: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.MuiInputLabel-root {
+  font-family: 'Poppins', sans-serif;
+  color: #1E3A8A;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #F59E0B;
+}
+
+input:focus,
+.MuiInputBase-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F59E0B;
+}
+
+.dark-mode input,
+.dark-mode .MuiInputBase-input {
+  background-color: #4A5568;
+  color: #FFFFFF;
+  border: 1px solid #718096;
 }
 
 .dark-mode input[type="date"] {
-  color: #FFFFFF; /* Ensure date picker input text is white */
+  color: #FFFFFF;
 }
 
 .dark-mode input[type="date"]::-webkit-datetime-edit,
 .dark-mode input[type="date"]::-webkit-inner-spin-button,
 .dark-mode input[type="date"]::-webkit-clear-button {
-  color: #FFFFFF; /* Target date picker sub-elements */
+  color: #FFFFFF;
 }
 
 .dark-mode .MuiInputLabel-root {
-  color: #FFFFFF; /* Ensure TextField labels are white */
+  color: #FFFFFF;
 }
 
 .dark-mode .MuiInputLabel-root.Mui-focused {
-  color: #F59E0B; /* Highlight label when focused with secondary color */
+  color: #F59E0B;
 }
 
-.dark-mode input:focus,
-.dark-mode .MuiInputBase-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F59E0B; /* Highlight on focus with secondary color */
+/* Style for Select component */
+.MuiSelect-select {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F9FAFB;
+  border-radius: 4px;
+  padding: 8px;
 }
 
-/* Style for Table and Button in dark mode */
+.dark-mode .MuiSelect-select {
+  background-color: #4A5568;
+  color: #FFFFFF;
+}
+
+.MuiMenuItem-root {
+  font-family: 'Poppins', sans-serif;
+  color: #1E3A8A;
+}
+
+.dark-mode .MuiMenuItem-root {
+  color: #FFFFFF;
+  background-color: #2D3748;
+}
+
+.dark-mode .MuiMenuItem-root:hover {
+  background-color: #718096;
+}
+
+/* Style for Table and Button */
+.MuiTableCell-root {
+  font-family: 'Poppins', sans-serif;
+  color: #1E3A8A;
+  padding: 12px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+  color: #1E3A8A;
+  font-weight: 600;
+}
+
 .dark-mode .MuiTableCell-root {
-  color: #FFFFFF; /* Ensure table headers and cells are white */
-  background-color: #2D3748; /* Darker background for contrast */
+  color: #FFFFFF;
+  background-color: #2D3748;
+  border-bottom: 1px solid #4A5568;
 }
 
 .dark-mode .MuiTableHead-root .MuiTableCell-root {
-  color: #F59E0B; /* Highlight table headers with secondary color */
-  font-weight: 600; /* Bold headers for emphasis */
+  color: #F59E0B;
+  font-weight: 600;
 }
 
-.dark-mode .MuiButton-root {
-  color: #FFFFFF; /* Ensure button text is white */
-  background-color: #4A5568; /* Match input background */
-  border-color: #718096; /* Consistent border */
+.MuiButton-root {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  border-radius: 4px;
+  padding: 10px 16px;
 }
 
-.dark-mode .MuiButton-root:hover {
-  background-color: #718096; /* Darker shade on hover */
+.MuiButton-contained {
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+}
+
+.MuiButton-contained:hover {
+  background-color: #F59E0B;
+}
+
+.dark-mode .MuiButton-contained {
+  background-color: #4A5568;
+  color: #FFFFFF;
+}
+
+.dark-mode .MuiButton-contained:hover {
+  background-color: #F59E0B;
+}
+
+.MuiButton-outlined {
+  border-color: #1E3A8A;
+  color: #1E3A8A;
+}
+
+.MuiButton-outlined:hover {
+  background-color: #F59E0B;
+  color: #FFFFFF;
 }
 
 .dark-mode .MuiButton-outlined {
-  border-color: #F59E0B; /* Highlight outlined buttons */
+  border-color: #F59E0B;
+  color: #FFFFFF;
 }
 
 .dark-mode .MuiButton-outlined:hover {
   background-color: #F59E0B;
-  color: #1A202C; /* Contrast text on hover */
+  color: #1A202C;
+}
+
+/* Enterprise card container for forms and tables */
+.card-container {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: background-color 0.3s;
+}
+
+.dark-mode .card-container {
+  background-color: #2D3748;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Booking form enhancements */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-form .MuiGrid-container {
+  width: 100%;
+}
+
+.booking-form .MuiTextField-root,
+.booking-form .MuiFormControl-root {
+  background-color: #F9FAFB;
+  border-radius: 4px;
+}
+
+.dark-mode .booking-form .MuiTextField-root,
+.dark-mode .booking-form .MuiFormControl-root {
+  background-color: #4A5568;
+}
+
+.booking-form .MuiFormControl-root {
+  min-width: 100%;
+}
+
+.booking-form .MuiSelect-select {
+  padding-right: 32px;
+  min-width: 150px;
+}
+
+.booking-form .MuiInputLabel-root {
+  transform: translate(14px, 16px) scale(1);
+}
+
+.booking-form .MuiInputLabel-shrink {
+  transform: translate(14px, -6px) scale(0.75);
+}
+
+.dark-mode .booking-form .MuiFormControl-root .MuiInputBase-root {
+  background-color: #4A5568;
+}
+
+.dark-mode .booking-form .MuiSelect-select {
+  color: #FFFFFF;
+}
+
+/* Table enhancements */
+.table-container {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-container .MuiTable-root {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Typography enhancements */
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1E3A8A;
+  margin-bottom: 8px;
+}
+
+.dark-mode .page-title {
+  color: #F59E0B;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: #4B5563;
+  margin-bottom: 24px;
+}
+
+.dark-mode .page-subtitle {
+  color: #E2E8F0;
 }

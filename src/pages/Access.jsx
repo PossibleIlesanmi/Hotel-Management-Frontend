@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Typography, Box, TextField, Button, styled } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const StyledForm = styled('form')(({ theme }) => ({
   display: 'flex',
@@ -22,7 +23,7 @@ const Access = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Client-side validation: ensure 4-digit number
     if (!/^\d{4}$/.test(code)) {
@@ -30,15 +31,16 @@ const Access = () => {
       return;
     }
 
-    // Hardcoded 4-digit code for testing
-    const VALID_CODE = '1234';
-    if (code === VALID_CODE) {
-      // Store a dummy token for frontend routing
-      localStorage.setItem('token', 'dummy-jwt-token');
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/access/validate`,
+        { code }
+      );
+      localStorage.setItem('token', response.data.token);
       setError('');
       navigate('/');
-    } else {
-      setError('Invalid code. Please try again.');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Invalid code. Please try again.');
     }
   };
 
