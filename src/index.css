@@ -1,3 +1,82 @@
+/* Existing CSS remains unchanged */
+
+/* Media Query for Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile; can be toggled with a menu later */
+    width: 0;
+    padding: 0;
+  }
+
+  .content {
+    margin-left: 0; /* Remove sidebar margin */
+    padding: 60px 10px 40px 10px; /* Adjust padding for mobile */
+    width: 100%;
+  }
+
+  .header {
+    position: static; /* Remove fixed positioning */
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .footer {
+    position: static; /* Remove fixed positioning */
+    padding: 10px;
+    width: 100%;
+    padding-left: 0; /* Remove sidebar-related padding */
+    margin-left: 0;
+  }
+
+  /* Adjust card container for mobile */
+  .card-container {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Adjust booking form for mobile */
+  .booking-form {
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  .booking-form .MuiTextField-root,
+  .booking-form .MuiFormControl-root {
+    min-width: 100%; /* Full width on mobile */
+  }
+
+  .booking-form .MuiSelect-select {
+    min-width: 100%; /* Full width on mobile */
+  }
+
+  /* Adjust table container for mobile */
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scrolling for wide tables */
+  }
+
+  .MuiTableCell-root {
+    padding: 8px; /* Reduce padding for smaller screens */
+    font-size: 0.875rem; /* Smaller text for mobile */
+  }
+
+  /* Adjust typography for mobile */
+  .page-title {
+    font-size: 1.5rem; /* Reduce title size */
+  }
+
+  .page-subtitle {
+    font-size: 0.875rem; /* Reduce subtitle size */
+  }
+
+  /* Adjust button sizes for mobile */
+  .MuiButton-root {
+    padding: 8px 12px; /* Smaller padding */
+    font-size: 0.875rem; /* Smaller text */
+  }
+}
+
+/* Full CSS with Media Queries */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 body {
@@ -334,4 +413,80 @@ input:focus,
 
 .dark-mode .page-subtitle {
   color: #E2E8F0;
+}
+
+/* Media Query for Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile; can be toggled with a menu later */
+    width: 0;
+    padding: 0;
+  }
+
+  .content {
+    margin-left: 0; /* Remove sidebar margin */
+    padding: 60px 10px 40px 10px; /* Adjust padding for mobile */
+    width: 100%;
+  }
+
+  .header {
+    position: static; /* Remove fixed positioning */
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .footer {
+    position: static; /* Remove fixed positioning */
+    padding: 10px;
+    width: 100%;
+    padding-left: 0; /* Remove sidebar-related padding */
+    margin-left: 0;
+  }
+
+  /* Adjust card container for mobile */
+  .card-container {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Adjust booking form for mobile */
+  .booking-form {
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  .booking-form .MuiTextField-root,
+  .booking-form .MuiFormControl-root {
+    min-width: 100%; /* Full width on mobile */
+  }
+
+  .booking-form .MuiSelect-select {
+    min-width: 100%; /* Full width on mobile */
+  }
+
+  /* Adjust table container for mobile */
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scrolling for wide tables */
+  }
+
+  .MuiTableCell-root {
+    padding: 8px; /* Reduce padding for smaller screens */
+    font-size: 0.875rem; /* Smaller text for mobile */
+  }
+
+  /* Adjust typography for mobile */
+  .page-title {
+    font-size: 1.5rem; /* Reduce title size */
+  }
+
+  .page-subtitle {
+    font-size: 0.875rem; /* Reduce subtitle size */
+  }
+
+  /* Adjust button sizes for mobile */
+  .MuiButton-root {
+    padding: 8px 12px; /* Smaller padding */
+    font-size: 0.875rem; /* Smaller text */
+  }
 }

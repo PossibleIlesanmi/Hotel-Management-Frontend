@@ -99,4 +99,22 @@ To deploy the project on Vercel:
      - Configure settings and deploy.
    - Future pushes to `master` will trigger automatic redeploys.
 
-## Project Structure
+## Deployment
+- **Frontend**: Deployed on Vercel (https://hotel-management-frontend-nu.vercel.app).
+  - Set `VITE_API_URL=https://hotel-management-backend-ic5v.onrender.com` in Vercel Environment Variables.
+  - Add `vercel.json` with rewrites to handle SPA routing.
+- **Backend**: Deployed on Render (https://hotel-management-backend-ic5v.onrender.com).
+  - Set environment variables:
+    - `MONGO_URI=your_mongodb_connection_string`
+    - `ADMIN_CODE=1234`
+    - `JWT_SECRET=your_jwt_secret_key`
+    - `FRONTEND_URL=https://hotel-management-frontend-nu.vercel.app`
+
+## Troubleshooting
+- **404 on /access**: Ensure `vercel.json` is configured and routes are defined in `App.jsx`.
+- **CORS Error**: Verify `FRONTEND_URL` matches the Vercel URL.
+- **MongoDB Connection**: Check `MONGO_URI` is a valid string.
+
+Testing:Continue testing with multiple users or edge cases (e.g., invalid codes, network interruptions) to ensure robustness.
+
+
