@@ -2,596 +2,609 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 html {
-  font-size: 16px; /* Consistent baseline for rem/em units */
+ font-size: 16px; /* Consistent baseline for rem/em units */
 }
 
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  transition: background-color 0.3s, color 0.3s;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Prevent horizontal overflow */
-  scroll-behavior: smooth; /* Smooth scrolling for anchors */
+ margin: 0;
+ font-family: 'Poppins', sans-serif;
+ transition: background-color 0.3s, color 0.3s;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ overflow-x: hidden; /* Prevent horizontal overflow */
+ scroll-behavior: smooth; /* Smooth scrolling for anchors */
 }
 
 .app-container {
-  padding: 20px;
-  min-height: 100vh;
-  transition: background-color 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ padding: 20px;
+ min-height: 100vh;
+ transition: background-color 0.3s;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 
 .sidebar {
-  width: 250px;
-  height: 100vh;
-  position: fixed;
-  background-color: #1E3A8A;
-  color: #FFFFFF;
-  padding: 20px;
-  transition: background-color 0.3s;
-  z-index: 1100;
+ width: 250px;
+ height: 100vh;
+ position: fixed;
+ background-color: #1E3A8A;
+ color: #FFFFFF;
+ padding: 20px;
+ transition: background-color 0.3s;
+ z-index: 1100;
 }
 
 .sidebar a {
-  color: #FFFFFF;
-  text-decoration: none;
-  display: block;
-  padding: 10px 0;
+ color: #FFFFFF;
+ text-decoration: none;
+ display: block;
+ padding: 10px 0;
 }
 
 .sidebar a:hover {
-  color: #F59E0B;
+ color: #F59E0B;
 }
 
 .content {
-  margin-left: 250px;
-  padding: 80px 20px 60px 20px;
-  transition: background-color 0.3s;
-  width: calc(100% - 250px);
-  box-sizing: border-box;
+ margin-left: 250px;
+ padding: 80px 20px 60px 20px;
+ transition: background-color 0.3s;
+ width: calc(100% - 250px);
+ box-sizing: border-box;
 }
 
 .header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  padding: 10px 20px;
-  background-color: #1E3A8A;
-  color: #FFFFFF;
-  left: 0;
-  z-index: 1000;
-  text-align: center;
-  box-sizing: border-box;
+ width: 100%;
+ position: fixed;
+ top: 0;
+ padding: 10px 20px;
+ background-color: #1E3A8A;
+ color: #FFFFFF;
+ left: 0;
+ z-index: 1000;
+ text-align: center;
+ box-sizing: border-box;
 }
 
 .footer {
-  padding: 10px 20px;
-  background-color: #1E3A8A;
-  color: #FFFFFF;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  z-index: 1000;
-  box-sizing: border-box;
+ padding: 10px 20px;
+ background-color: #1E3A8A;
+ color: #FFFFFF;
+ width: 100%;
+ position: fixed;
+ bottom: 0;
+ z-index: 1000;
+ box-sizing: border-box;
 }
 
 .dark-mode {
-  background-color: #1A202C;
+ background-color: #1A202C;
 }
 
 .dark-mode .sidebar {
-  background-color: #2D3748;
+ background-color: #2D3748;
 }
 
 .dark-mode .sidebar a {
-  color: #E2E8F0;
+ color: #E2E8F0;
 }
 
 .dark-mode .content,
 .dark-mode .app-container {
-  background-color: #1A202C;
-  color: #FFFFFF;
+ background-color: #1A202C;
+ color: #FFFFFF;
 }
 
 .dark-mode .header {
-  background-color: #2D3748;
-  color: #FFFFFF;
+ background-color: #2D3748;
+ color: #FFFFFF;
 }
 
 .dark-mode .footer {
-  background-color: #2D3748;
-  color: #FFFFFF;
+ background-color: #2D3748;
+ color: #FFFFFF;
 }
 
 /* Style for input fields and labels */
 input,
 .MuiInputBase-input {
-  font-family: 'Poppins', sans-serif;
-  background-color: #F9FAFB;
-  border-radius: 4px;
-  padding: 8px;
-  transition: background-color 0.3s, color 0.3s;
+ font-family: 'Poppins', sans-serif;
+ background-color: #F9FAFB;
+ border-radius: 4px;
+ padding: 8px;
+ transition: background-color 0.3s, color 0.3s;
 }
 
 .MuiInputLabel-root {
-  font-family: 'Poppins', sans-serif;
-  color: #1E3A8A;
+ font-family: 'Poppins', sans-serif;
+ color: #1E3A8A;
 }
 
 .MuiInputLabel-root.Mui-focused {
-  color: #F59E0B;
+ color: #F59E0B;
 }
 
 input:focus,
 .MuiInputBase-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F59E0B;
+ outline: none;
+ box-shadow: 0 0 0 2px #F59E0B;
 }
 
 .dark-mode input,
 .dark-mode .MuiInputBase-input {
-  background-color: #4A5568;
-  color: #FFFFFF;
-  border: 1px solid #718096;
+ background-color: #4A5568;
+ color: #FFFFFF;
+ border: 1px solid #718096;
 }
 
 .dark-mode input[type="date"] {
-  color: #FFFFFF;
+ color: #FFFFFF;
 }
 
 .dark-mode input[type="date"]::-webkit-datetime-edit,
 .dark-mode input[type="date"]::-webkit-inner-spin-button,
 .dark-mode input[type="date"]::-webkit-clear-button {
-  color: #FFFFFF;
+ color: #FFFFFF;
 }
 
 .dark-mode .MuiInputLabel-root {
-  color: #FFFFFF;
+ color: #FFFFFF;
 }
 
 .dark-mode .MuiInputLabel-root.Mui-focused {
-  color: #F59E0B;
+ color: #F59E0B;
 }
 
 /* Style for Select component */
 .MuiSelect-select {
-  font-family: 'Poppins', sans-serif;
-  background-color: #F9FAFB;
-  border-radius: 4px;
-  padding: 8px;
+ font-family: 'Poppins', sans-serif;
+ background-color: #F9FAFB;
+ border-radius: 4px;
+ padding: 8px;
 }
 
 .dark-mode .MuiSelect-select {
-  background-color: #4A5568;
-  color: #FFFFFF;
+ background-color: #4A5568;
+ color: #FFFFFF;
 }
 
 .MuiMenuItem-root {
-  font-family: 'Poppins', sans-serif;
-  color: #1E3A8A;
+ font-family: 'Poppins', sans-serif;
+ color: #1E3A8A;
 }
 
 .dark-mode .MuiMenuItem-root {
-  color: #FFFFFF;
-  background-color: #2D3748;
+ color: #FFFFFF;
+ background-color: #2D3748;
 }
 
 .dark-mode .MuiMenuItem-root:hover {
-  background-color: #718096;
+ background-color: #718096;
 }
 
 /* Style for Table and Button */
 .MuiTableCell-root {
-  font-family: 'Poppins', sans-serif;
-  color: #1E3A8A;
-  padding: 12px;
-  border-bottom: 1px solid #E2E8F0;
+ font-family: 'Poppins', sans-serif;
+ color: #1E3A8A;
+ padding: 12px;
+ border-bottom: 1px solid #E2E8F0;
 }
 
 .MuiTableHead-root .MuiTableCell-root {
-  color: #1E3A8A;
-  font-weight: 600;
+ color: #1E3A8A;
+ font-weight: 600;
 }
 
 .dark-mode .MuiTableCell-root {
-  color: #FFFFFF;
-  background-color: #2D3748;
-  border-bottom: 1px solid #4A5568;
+ color: #FFFFFF;
+ background-color: #2D3748;
+ border-bottom: 1px solid #4A5568;
 }
 
 .dark-mode .MuiTableHead-root .MuiTableCell-root {
-  color: #F59E0B;
-  font-weight: 600;
+ color: #F59E0B;
+ font-weight: 600;
 }
 
 .MuiButton-root {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  text-transform: none;
-  border-radius: 4px;
-  padding: 10px 16px;
+ font-family: 'Poppins', sans-serif;
+ font-weight: 500;
+ text-transform: none;
+ border-radius: 4px;
+ padding: 10px 16px;
 }
 
 .MuiButton-root:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F59E0B;
+ outline: none;
+ box-shadow: 0 0 0 2px #F59E0B;
 }
 
 .MuiButton-contained {
-  background-color: #1E3A8A;
-  color: #FFFFFF;
+ background-color: #1E3A8A;
+ color: #FFFFFF;
 }
 
 .MuiButton-contained:hover {
-  background-color: #F59E0B;
+ background-color: #F59E0B;
 }
 
 .dark-mode .MuiButton-contained {
-  background-color: #4A5568;
-  color: #FFFFFF;
+ background-color: #4A5568;
+ color: #FFFFFF;
 }
 
 .dark-mode .MuiButton-contained:hover {
-  background-color: #F59E0B;
+ background-color: #F59E0B;
 }
 
 .MuiButton-outlined {
-  border-color: #1E3A8A;
-  color: #1E3A8A;
+ border-color: #1E3A8A;
+ color: #1E3A8A;
 }
 
 .MuiButton-outlined:hover {
-  background-color: #F59E0B;
-  color: #FFFFFF;
+ background-color: #F59E0B;
+ color: #FFFFFF;
 }
 
 .dark-mode .MuiButton-outlined {
-  border-color: #F59E0B;
-  color: #FFFFFF;
+ border-color: #F59E0B;
+ color: #FFFFFF;
 }
 
 .dark-mode .MuiButton-outlined:hover {
-  background-color: #F59E0B;
-  color: #1A202C;
+ background-color: #F59E0B;
+ color: #1A202C;
 }
 
 /* Enterprise card container for forms and tables */
 .card-container {
-  background-color: #FFFFFF;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 24px;
-  margin-bottom: 24px;
-  transition: background-color 0.3s;
-  width: 100%;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+ background-color: #FFFFFF;
+ border-radius: 8px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ padding: 24px;
+ margin-bottom: 24px;
+ transition: background-color 0.3s;
+ width: 100%;
+ max-width: 800px;
+ margin-left: auto;
+ margin-right: auto;
 }
 
 .dark-mode .card-container {
-  background-color: #2D3748;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+ background-color: #2D3748;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Booking form enhancements */
 .booking-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 24px;
+ max-width: 600px;
+ margin: 0 auto;
+ width: 100%;
 }
 
 .booking-form .MuiGrid-container {
-  width: 100%;
+ width: 100%;
 }
 
 .booking-form .MuiTextField-root,
 .booking-form .MuiFormControl-root {
-  background-color: #F9FAFB;
-  border-radius: 4px;
+ background-color: #F9FAFB;
+ border-radius: 4px;
 }
 
 .dark-mode .booking-form .MuiTextField-root,
 .dark-mode .booking-form .MuiFormControl-root {
-  background-color: #4A5568;
+ background-color: #4A5568;
 }
 
 .booking-form .MuiFormControl-root {
-  min-width: 100%;
+ min-width: 100%;
 }
 
 .booking-form .MuiSelect-select {
-  padding-right: 32px;
-  min-width: 150px;
+ padding-right: 32px;
+ min-width: 150px ;
 }
 
 .booking-form .MuiInputLabel-root {
-  transform: translate(14px, 16px) scale(1);
+ transform: translate(14px, 16px) scale(1);
 }
 
 .booking-form .MuiInputLabel-shrink {
-  transform: translate(14px, -6px) scale(0.75);
+ transform: translate(14px, -6px) scale(0.75);
 }
 
 .dark-mode .booking-form .MuiFormControl-root .MuiInputBase-root {
-  background-color: #4A5568;
+ background-color: #4A5568;
 }
 
 .dark-mode .booking-form .MuiSelect-select {
-  color: #FFFFFF;
+ color: #FFFFFF;
 }
 
 /* Table enhancements */
 .table-container {
-  border-radius: 8px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+ border-radius: 8px;
+ overflow: hidden;
+ width: 100%;
+ max-width: 800px;
+ margin: 0 auto;
 }
 
 .table-container .MuiTable-root {
-  border-collapse: separate;
-  border-spacing: 0;
+ border-collapse: separate;
+ border-spacing: 0;
 }
 
 /* Typography enhancements */
 .page-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #1E3A8A;
-  margin-bottom: 8px;
-  text-align: center;
+ font-size: 2rem;
+ font-weight: 600;
+ color: #1E3A8A;
+ margin-bottom: 8px;
+ text-align: center;
 }
 
 .dark-mode .page-title {
-  color: #F59E0B;
+ color: #F59E0B;
 }
 
 .page-subtitle {
-  font-size: 1rem;
-  color: #4B5563;
-  margin-bottom: 24px;
-  text-align: center;
+ font-size: 1rem;
+ color: #4B5563;
+ margin-bottom: 24px;
+ text-align: center;
 }
 
 .dark-mode .page-subtitle {
-  color: #E2E8F0;
+ color: #E2E8F0;
 }
 
 /* Ensure images are responsive */
 img {
-  max-width: 100%;
-  height: auto;
+ max-width: 100%;
+ height: auto;
 }
 
 /* Media Query for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
+ body {
+ font-size: 16px;
+ }
 
-  .app-container {
-    padding: 10px;
-  }
+ .app-container {
+ padding: 10px;
+ }
 
-  .sidebar {
-    display: none;
-    width: 0;
-    padding: 0;
-  }
+ .sidebar {
+ display: none;
+ width: 0;
+ padding: 0;
+ }
 
-  .content {
-    margin-left: 0;
-    padding: 20px 10px;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+ .content {
+ margin-left: 0;
+ padding: 20px 10px;
+ width: 100%;
+ box-sizing: border-box;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ }
 
-  .header {
-    position: relative;
-    padding: 10px 15px;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-  }
+ .header {
+ position: relative;
+ padding: 10px 15px;
+ width: 100%;
+ text-align: center;
+ box-sizing: border-box;
+ }
 
-  .footer {
-    position: relative;
-    padding: 10px 15px;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-  }
+ .footer {
+ position: relative;
+ padding: 10px 15px;
+ width: 100%;
+ text-align: center;
+ box-sizing: border-box;
+ }
 
-  .card-container {
-    padding: 16px;
-    margin: 10px auto;
-    width: 90%;
-    max-width: 600px;
-    box-sizing: border-box;
-  }
+ .card-container {
+ padding: 16px;
+ margin: 10px auto;
+ width: 90%;
+ max-width: 600px;
+ box-sizing: border-box;
+ }
 
-  .booking-form {
-    gap: 16px;
-    padding: 0 10px;
-    width: 100%;
-    max-width: 100%;
-  }
+ .booking-form {
+ gap: 16px;
+ padding: 0 10px;
+ width: 100%;
+ max-width: 100%;
+ }
 
-  .booking-form .MuiTextField-root,
-  .booking-form .MuiFormControl-root {
-    min-width: 100%;
-  }
+ .booking-form .MuiTextField-root,
+ .booking-form .MuiFormControl-root {
+ min-width: 100%;
+ }
 
-  .booking-form .MuiSelect-select {
-    min-width: 100%;
-  }
+ .booking-form .MuiSelect-select {
+ min-width: 100%;
+ }
 
-  .table-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    overflow-x: auto;
-  }
+ .table-container {
+ width: 100%;
+ max-width: 100%;
+ margin: 0 auto;
+ overflow-x: auto;
+ }
 
-  .MuiTableCell-root {
-    padding: 8px;
-    font-size: 0.9rem;
-  }
+ .MuiTableCell-root {
+ padding: 8px;
+ font-size: 0.9rem;
+ }
 
-  .page-title {
-    font-size: 1.75rem;
-    text-align: center;
-  }
+ .page-title {
+ font-size: 1.75rem;
+ text-align: center;
+ }
 
-  .page-subtitle {
-    font-size: 1rem;
-    text-align: center;
-  }
+ .page-subtitle {
+ font-size: 1rem;
+ text-align: center;
+ }
 
-  .MuiButton-root {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
+ .MuiButton-root {
+ padding: 8px 16px;
+ font-size: 0.9rem;
+ }
 }
 
 /* Media Query for 350x720px Viewport (max-width: 350px) */
 @media (max-width: 350px) {
-  body {
-    font-size: 14px; /* Slightly smaller base font for narrow viewport */
-  }
+ body {
+ font-size: 14px; /* Smaller base font for narrow viewport */
+ }
 
-  .app-container {
-    padding: 8px; /* Reduced padding for smaller screen */
-  }
+ .app-container {
+ padding: 8px; /* Reduced padding */
+ }
 
-  .content {
-    padding: 15px 5px; /* Tighter padding to fit 350px width */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+ .content {
+ padding: 15px 5px; /* Tighter padding for 350px */
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ }
 
-  .header {
-    position: relative;
-    padding: 8px 10px; /* Adjusted for narrow viewport */
-    width: 100%;
-    text-align: center;
-  }
+ .header {
+ position: relative;
+ padding: 8px 10px; /* Adjusted for narrow viewport */
+ width: 100%;
+ text-align: center;
+ }
 
-  .footer {
-    position: relative;
-    padding: 8px 10px;
-    width: 100%;
-    text-align: center;
-  }
+ .header .MuiTypography-h6 {
+ font-size: 1.2rem; /* Smaller header text for 350px */
+ }
 
-  .card-container {
-    padding: 12px; /* Reduced padding */
-    margin: 8px auto;
-    width: 95%; /* Maximize usable width */
-    max-width: 330px; /* Fit within 350px viewport */
-    box-sizing: border-box;
-  }
+ .footer {
+ position: relative;
+ padding: 8px 10px;
+ width: 100%;
+ text-align: center;
+ font-size: 0.8rem; /* Smaller footer text */
+ }
 
-  .booking-form {
-    gap: 12px; /* Tighter spacing */
-    padding: 0 5px;
-    width: 100%;
-    max-width: 100%;
-  }
+ .card-container {
+ padding: 12px;
+ margin: 8px auto;
+ width: 95%;
+ max-width: 330px; /* Fit within 350px */
+ box-sizing: border-box;
+ }
 
-  .booking-form .MuiTextField-root,
-  .booking-form .MuiFormControl-root {
-    min-width: 100%;
-    font-size: 0.85rem; /* Smaller input text */
-  }
+ .booking-form {
+ gap: 12px;
+ padding: 0 5px;
+ width: 100%;
+ max-width: 100%;
+ }
 
-  .booking-form .MuiSelect-select {
-    min-width: 100%;
-    font-size: 0.85rem;
-  }
+ .booking-form .MuiTextField-root,
+ .booking-form .MuiFormControl-root {
+ min-width: 100%;
+ font-size: 0.85rem;
+ }
 
-  .booking-form .MuiInputLabel-root {
-    font-size: 0.85rem; /* Smaller labels */
-  }
+ .booking-form .MuiSelect-select {
+ min-width: 100%;
+ font-size: 0.85rem;
+ }
 
-  .table-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    overflow-x: auto;
-  }
+ .booking-form .MuiInputLabel-root {
+ font-size: 0.85rem;
+ }
 
-  .MuiTableCell-root {
-    padding: 6px; /* Tighter padding for tables */
-    font-size: 0.8rem; /* Smaller table text */
-  }
+ .table-container {
+ width: 100%;
+ max-width: 100%;
+ margin: 0 auto;
+ overflow-x: auto;
+ }
 
-  .page-title {
-    font-size: 1.5rem; /* Smaller title */
-    text-align: center;
-  }
+ .MuiTableCell-root {
+ padding: 6px;
+ font-size: 0.8rem;
+ }
 
-  .page-subtitle {
-    font-size: 0.875rem; /* Smaller subtitle */
-    text-align: center;
-  }
+ .page-title {
+ font-size: 1.5rem;
+ text-align: center;
+ }
 
-  .MuiButton-root {
-    padding: 6px 12px; /* Smaller buttons */
-    font-size: 0.85rem;
-  }
+ .page-subtitle {
+ font-size: 0.875rem;
+ text-align: center;
+ }
+
+ .MuiButton-root {
+ padding: 6px 12px;
+ font-size: 0.85rem;
+ }
 }
 
 /* Media Query for Very Small Screens (max-width: 320px) */
 @media (max-width: 320px) {
-  body {
-    font-size: 13px;
-  }
+ body {
+ font-size: 13px;
+ } 
 
-  .content {
-    padding: 12px 4px;
-  }
+ .content {
+ padding: 12px 4px;
+ }
 
-  .card-container {
-    padding: 10px;
-    margin: 6px auto;
-    width: 98%;
-    max-width: 300px;
-  }
+ .card-container {
+ padding: 10px;
+ margin: 6px auto;
+ width: 98%;
+ max-width: 300px;
+ }
 
-  .booking-form {
-    gap: 10px;
-    padding: 0 4px;
-  }
+ .booking-form {
+ gap: 10px;
+ padding: 0 4px;
+ }
 
-  .MuiTableCell-root {
-    padding: 5px;
-    font-size: 0.75rem;
-  }
+ .MuiTableCell-root {
+ padding: 5px;
+ font-size: 0.75rem;
+ }
 
-  .page-title {
-    font-size: 1.3rem;
-  }
+ .page-title {
+ font-size: 1.3rem;
+ }
 
-  .page-subtitle {
-    font-size: 0.8rem;
-  }
+ .page-subtitle {
+ font-size: 0.8rem;
+ }
 
-  .MuiButton-root {
-    padding: 5px 10px;
-    font-size: 0.8rem;
-  }
+ .MuiButton-root {
+ padding: 5px 10px;
+ font-size: 0.8rem;
+ }
+
+ .header .MuiTypography-h6 {
+ font-size: 1.1rem;
+ }
+
+ .footer {
+ font-size: 0.75rem;
+ }
 }
