@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
-import { Typography, Box, Switch, FormControlLabel, Button, Modal, Paper, Grid } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import {
+  Typography,
+  Box,
+  Switch,
+  FormControlLabel,
+  Button,
+  Modal,
+  Paper,
+  Grid,
+  Link,
+} from '@mui/material';
 import { styled } from '@mui/system';
 
-const StyledModal = styled(Modal)(({ theme }) => ({
+const StyledModal = styled(Modal)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-}));
+});
 
 const ModalContent = styled(Paper)(({ theme }) => ({
   width: '90%',
   maxWidth: 500,
   padding: theme.spacing(3),
-  backgroundColor: theme.palette.mode === 'dark' ? '#2D3748' : '#FFFFFF',
+  backgroundColor:
+    theme.palette.mode === 'dark' ? '#2D3748' : theme.palette.background.paper,
   borderRadius: 8,
   boxShadow: theme.shadows[5],
 }));
@@ -21,82 +32,134 @@ const Settings = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
+  // Load dark mode preference from localStorage
+  useEffect(() => {
+    const savedMode = localStorage.getItem('darkMode') === 'true';
+    setDarkMode(savedMode);
+    document.body.classList.toggle('dark-mode', savedMode);
+  }, []);
+
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode', !darkMode);
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('darkMode', newMode);
+    document.body.classList.toggle('dark-mode', newMode);
   };
 
-  const handleOpenModal = () => setOpenModal(true);
-  const handleCloseModal = () => setOpenModal(false);
-
   return (
-    <Box className="app-container" sx={{ padding: 2 }}>
-      <Typography variant="h3" gutterBottom color="#1E3A8A" fontWeight="bold">
+    <Box className="app-container" sx={{ p: 2 }}>
+      <Typography variant="h3" gutterBottom color="primary" fontWeight="bold">
         Settings
       </Typography>
-      <Typography paragraph color="#1E3A8A">
+
+      <Typography paragraph color="text.primary">
         Configure application preferences.
       </Typography>
+
       <FormControlLabel
         control={<Switch checked={darkMode} onChange={toggleDarkMode} />}
         label="Dark Mode"
       />
-      <Button variant="contained" color="primary" onClick={handleOpenModal} sx={{ mt: 2 }}>
+
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => setOpenModal(true)}
+        sx={{ mt: 2 }}
+      >
         About Developer
       </Button>
-      <StyledModal open={openModal} onClose={handleCloseModal}>
+
+      <StyledModal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        aria-labelledby="developer-details-title"
+      >
         <ModalContent>
-          <Typography variant="h5" gutterBottom color="#1E3A8A" fontWeight="bold">
+          <Typography
+            id="developer-details-title"
+            variant="h5"
+            gutterBottom
+            color="primary"
+            fontWeight="bold"
+          >
             Developer Details
           </Typography>
+
           <Grid container spacing={2} sx={{ mt: 1 }}>
             <Grid item xs={12}>
-              <Typography variant="body1" color="text.primary">
+              <Typography>
                 <strong>Name:</strong> Ilesanmi Gbenga Possible
               </Typography>
             </Grid>
+
             <Grid item xs={12}>
-              <Typography variant="body1" color="text.primary">
+              <Typography>
                 <strong>Role:</strong> Software Developer - Full Stack Developer
               </Typography>
             </Grid>
+
             <Grid item xs={12}>
-              <Typography variant="body1" color="text.primary">
+              <Typography>
                 <strong>Portfolio:</strong>{' '}
-                <a href="https://github.com/PossibleIlesanmi" target="_blank" rel="noopener noreferrer" style={{ color: '#1E3A8A' }}>
-                  https://github.com/PossibleIlesanmi
-                </a>
+                <Link
+                  href="https://github.com/PossibleIlesanmi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="primary"
+                  underline="hover"
+                >
+                  github.com/PossibleIlesanmi
+                </Link>
               </Typography>
             </Grid>
+
             <Grid item xs={12}>
-              <Typography variant="body1" color="text.primary">
+              <Typography>
                 <strong>Latest Project:</strong> MyFund Enterprise Mobile App
               </Typography>
             </Grid>
+
             <Grid item xs={12}>
-              <Typography variant="body1" color="text.primary">
+              <Typography>
                 <strong>Socials:</strong>
               </Typography>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li>
-                  <a href="https://www.linkedin.com/in/ilesanmi-gbenga-possible-238107241" target="_blank" rel="noopener noreferrer" style={{ color: '#1E3A8A' }}>
+                  <Link
+                    href="https://www.linkedin.com/in/ilesanmi-gbenga-possible-238107241"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="primary"
+                  >
                     LinkedIn
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://web.facebook.com/profile.php?id=100071514043019" target="_blank" rel="noopener noreferrer" style={{ color: '#1E3A8A' }}>
+                  <Link
+                    href="https://web.facebook.com/profile.php?id=100071514043019"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="primary"
+                  >
                     Facebook
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://github.com/PossibleIlesanmi" target="_blank" rel="noopener noreferrer" style={{ color: '#1E3A8A' }}>
+                  <Link
+                    href="https://github.com/PossibleIlesanmi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="primary"
+                  >
                     GitHub
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </Grid>
+
             <Grid item xs={12}>
-              <Typography variant="body1" color="text.primary">
+              <Typography>
                 <strong>Professional Skills:</strong>
               </Typography>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
@@ -105,16 +168,18 @@ const Settings = () => {
                 <li>✔ Desktop App (Java)</li>
               </ul>
             </Grid>
+
             <Grid item xs={12}>
-              <Typography variant="body1" color="text.primary">
+              <Typography>
                 <strong>Personal Skills:</strong>
               </Typography>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 <li>✔ Leadership (Communication, Follow-up)</li>
               </ul>
             </Grid>
+
             <Grid item xs={12}>
-              <Typography variant="body1" color="text.primary">
+              <Typography>
                 <strong>Professional Experience:</strong>
               </Typography>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
@@ -124,7 +189,13 @@ const Settings = () => {
               </ul>
             </Grid>
           </Grid>
-          <Button variant="contained" color="primary" onClick={handleCloseModal} sx={{ mt: 2 }}>
+
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => setOpenModal(false)}
+            sx={{ mt: 2 }}
+          >
             Close
           </Button>
         </ModalContent>

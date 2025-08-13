@@ -7,14 +7,14 @@ const StyledForm = styled('form')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   gap: theme.spacing(2),
+  width: '100%',
   maxWidth: '400px',
-  margin: 'auto',
-  marginTop: theme.spacing(10),
   padding: theme.spacing(3),
   backgroundColor: theme.palette.background.default,
   borderRadius: '12px',
   boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   transition: 'background-color 0.3s, color 0.3s',
+  boxSizing: 'border-box',
 }));
 
 const Access = () => {
