@@ -1,12 +1,18 @@
 /* Full CSS with Media Queries */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+html {
+  font-size: 16px; /* Consistent baseline for rem/em units */
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   transition: background-color 0.3s, color 0.3s;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  scroll-behavior: smooth; /* Smooth scrolling for anchors */
 }
 
 .app-container {
@@ -207,6 +213,11 @@ input:focus,
   text-transform: none;
   border-radius: 4px;
   padding: 10px 16px;
+}
+
+.MuiButton-root:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F59E0B;
 }
 
 .MuiButton-contained {
@@ -454,42 +465,133 @@ img {
   }
 }
 
-/* Media Query for Very Small Screens (max-width: 480px) */
-@media (max-width: 480px) {
+/* Media Query for 350x720px Viewport (max-width: 350px) */
+@media (max-width: 350px) {
   body {
-    font-size: 14px;
+    font-size: 14px; /* Slightly smaller base font for narrow viewport */
+  }
+
+  .app-container {
+    padding: 8px; /* Reduced padding for smaller screen */
   }
 
   .content {
-    padding: 15px 5px;
+    padding: 15px 5px; /* Tighter padding to fit 350px width */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    position: relative;
+    padding: 8px 10px; /* Adjusted for narrow viewport */
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer {
+    position: relative;
+    padding: 8px 10px;
+    width: 100%;
+    text-align: center;
   }
 
   .card-container {
-    padding: 12px;
+    padding: 12px; /* Reduced padding */
     margin: 8px auto;
-    width: 95%;
+    width: 95%; /* Maximize usable width */
+    max-width: 330px; /* Fit within 350px viewport */
+    box-sizing: border-box;
   }
 
   .booking-form {
-    gap: 12px;
+    gap: 12px; /* Tighter spacing */
     padding: 0 5px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .booking-form .MuiTextField-root,
+  .booking-form .MuiFormControl-root {
+    min-width: 100%;
+    font-size: 0.85rem; /* Smaller input text */
+  }
+
+  .booking-form .MuiSelect-select {
+    min-width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .booking-form .MuiInputLabel-root {
+    font-size: 0.85rem; /* Smaller labels */
+  }
+
+  .table-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
   }
 
   .MuiTableCell-root {
-    padding: 6px;
-    font-size: 0.85rem;
+    padding: 6px; /* Tighter padding for tables */
+    font-size: 0.8rem; /* Smaller table text */
   }
 
   .page-title {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Smaller title */
+    text-align: center;
   }
 
   .page-subtitle {
-    font-size: 0.875rem;
+    font-size: 0.875rem; /* Smaller subtitle */
+    text-align: center;
   }
 
   .MuiButton-root {
-    padding: 6px 12px;
+    padding: 6px 12px; /* Smaller buttons */
     font-size: 0.85rem;
+  }
+}
+
+/* Media Query for Very Small Screens (max-width: 320px) */
+@media (max-width: 320px) {
+  body {
+    font-size: 13px;
+  }
+
+  .content {
+    padding: 12px 4px;
+  }
+
+  .card-container {
+    padding: 10px;
+    margin: 6px auto;
+    width: 98%;
+    max-width: 300px;
+  }
+
+  .booking-form {
+    gap: 10px;
+    padding: 0 4px;
+  }
+
+  .MuiTableCell-root {
+    padding: 5px;
+    font-size: 0.75rem;
+  }
+
+  .page-title {
+    font-size: 1.3rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .MuiButton-root {
+    padding: 5px 10px;
+    font-size: 0.8rem;
   }
 }
