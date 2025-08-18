@@ -355,3 +355,97 @@ input:focus,
     font-size: 1.3rem;
   }
 }
+/* ------------------ Responsive Enhancements ------------------ */
+
+/* Tablet & Below */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+  .content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Hide on mobile, can later toggle via JS */
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    display: block;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 1200;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 70px 15px 50px; /* Adjusted for mobile header/footer */
+  }
+
+  .header,
+  .footer {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+  .page-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .card-container {
+    padding: 16px;
+    width: 95%;
+  }
+  .booking-form {
+    gap: 16px;
+  }
+  .MuiButton-root {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    width: 100%; /* Full width buttons on small screens */
+  }
+  .page-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 350px) {
+  body {
+    font-size: 14px;
+  }
+  .card-container {
+    padding: 12px;
+    width: 95%;
+  }
+  .MuiButton-root {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 320px) {
+  body {
+    font-size: 13px;
+  }
+  .page-title {
+    font-size: 1.2rem;
+  }
+}
